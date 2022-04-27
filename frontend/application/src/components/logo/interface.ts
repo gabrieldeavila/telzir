@@ -1,9 +1,10 @@
 import { black, white, red } from "../../assets/base/colors";
 
-// Logo can have different types or sizes.
+// Logo can have different types, sizes or be justified in a different way.
 export interface LogoProps {
   type?: "dark" | "light" | "red";
   size?: "sm" | "md" | "lg";
+  justify?: "center" | "flex-start" | "flex-end";
 }
 
 // Possible options for the logo.
@@ -24,14 +25,8 @@ export const LogoOptions = {
   },
 
   size: {
-    sm: {
-      mobile: "1rem",
-    },
-    md: {
-      mobile: "1.5rem",
-    },
-    lg: {
-      mobile: "2rem",
-    },
+    sm: "1rem",
+    md: "1.5rem",
+    lg: "2rem",
   },
 };
