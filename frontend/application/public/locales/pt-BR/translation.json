@@ -1,0 +1,11 @@
+{
+  "navbar": {
+    "simulation": "Simulação",
+    "support": "Suporte"
+  },
+  "sidebar": {
+    "simulation": "Simulação",
+    "support": "Suporte",
+    "language": "Mudar idioma para Inglês"
+  }
+}
