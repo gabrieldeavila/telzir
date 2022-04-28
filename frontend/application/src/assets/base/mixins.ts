@@ -11,3 +11,22 @@ export const Flex = css`
   justify-content: center;
   align-items: center;
 `;
+
+//Settings to create the default container
+export const ContainerSettings = css`
+  ${BoxShadow};
+  overflow: hidden;
+  border-radius: 3px;
+`;
+
+export const Scrollbar = css`
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #c4c8ca;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #7f7f83;
+  }
+`;
