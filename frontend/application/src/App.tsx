@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 import Sidebar from "./components/sidebar";
 import { GlobalProvider } from "./contexts/global";
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <Sidebar />
       <RoutesWrapper />
+      <Footer />
     </GlobalProvider>
   );
 }
