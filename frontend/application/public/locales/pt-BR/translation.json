@@ -1,11 +1,31 @@
 {
-  "navbar": {
-    "simulation": "Simulação",
-    "support": "Suporte"
-  },
-  "sidebar": {
-    "simulation": "Simulação",
-    "support": "Suporte",
-    "language": "Mudar idioma para Inglês"
+  "simulation": "Simulação",
+  "support": "Suporte",
+  "language": "Mudar idioma para Inglês",
+  "evolution": "Quer conduzir a evolução?",
+  "choose": "Use",
+  "company": "Empresa",
+  "home": {
+    "best": "Melhor custo benefício",
+    "basic_title": "FaleMais 30",
+    "basic_description": "30min/mês",
+    "premium_title": "FaleMais 60",
+    "premium_description": "60min/mês",
+    "standard_title": "FaleMais 120",
+    "standard_description": "120min/mês",
+    "advantages": {
+      "basic_advantage_1": "Trinta minutos gratuitos",
+      "basic_advantage_2": "Tenha acesso a ligações de longa distância",
+      "basic_advantage_3": "Suporte 24h em todo o território nacional",
+      "basic_advantage_4": "Todos os demais benefícios Telzir.",
+      "premium_advantage_1": "Sessenta minutos gratuitos",
+      "premium_advantage_2": "Tenha acesso a ligações de longa distância",
+      "premium_advantage_3": "Suporte 24h em todo o território nacional",
+      "premium_advantage_4": "Todos os demais benefícios Telzir.",
+      "standard_advantage_1": "Cento e vinte minutos gratuitos",
+      "standard_advantage_2": "Tenha acesso a ligações de longa distância",
+      "standard_advantage_3": "Suporte 24h em todo o território nacional",
+      "standard_advantage_4": "Todos os demais benefícios Telzir."
+    }
   }
 }

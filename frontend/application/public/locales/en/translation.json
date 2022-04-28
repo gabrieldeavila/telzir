@@ -1,11 +1,7 @@
 {
-  "navbar": {
-    "simulation": "Simulation",
-    "support": "Support"
-  },
-  "sidebar": {
-    "simulation": "Simulation",
-    "support": "Support",
-    "language": "Change language to Portuguese"
-  }
+  "simulation": "Simulation",
+  "support": "Support",
+  "language": "Change language to Portuguese",
+  "evolution": "Want to be the best?",
+  "choose": "Choose"
 }
