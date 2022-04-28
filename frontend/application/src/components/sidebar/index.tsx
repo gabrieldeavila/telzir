@@ -6,6 +6,7 @@ import {
   SidebarLine,
   SidebarOptions,
   SidebarOptionsText,
+  SidebarScroll,
   SidebarWrapper,
 } from "./style";
 import { GrClose } from "react-icons/gr";
@@ -41,30 +42,28 @@ export default function Sidebar() {
 
   // avoid the sidebar to be open when the window is not smaller than 768px
   if (!state.isMobile) return null;
-
+  //
   return (
     <SidebarWrapper style={styles}>
       <SidebarContent>
-        <div>
+        <SidebarScroll>
           <SidebarIconWrapper onClick={closeSidebar}>
             <GrClose size="25" />
           </SidebarIconWrapper>
 
           <SidebarOptions>
             <SidebarOptionsText onClick={changeLanguage}>
-              {t("sidebar.language")}
+              {t("language")}
             </SidebarOptionsText>
-            <SidebarOptionsText>{t("sidebar.simulation")}</SidebarOptionsText>
+            <SidebarOptionsText>{t("simulation")}</SidebarOptionsText>
           </SidebarOptions>
 
           <SidebarLine />
 
           <SidebarOptions>
-            <SidebarOptionsText small>
-              {t("sidebar.support")}
-            </SidebarOptionsText>
+            <SidebarOptionsText small>{t("support")}</SidebarOptionsText>
           </SidebarOptions>
-        </div>
+        </SidebarScroll>
 
         <Logo type="light" justify="flex-start" />
       </SidebarContent>

@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { white } from "../../assets/base/colors";
 import { BoxShadow, Flex } from "./../../assets/base/mixins";
 import { NavOptionsInterface, NavWrapperInterface } from "./interface";
 
 export const Nav = styled.nav`
   ${BoxShadow};
+  position: fixed;
+  width: 100%;
+  background: ${white};
   height: 80px;
 `;
 

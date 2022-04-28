@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 import { black, white } from "../../assets/base/colors";
-import { Flex } from "../../assets/base/mixins";
+import { Flex, Scrollbar } from "../../assets/base/mixins";
 import { SidebarOptionsTextProps } from "./interface";
 import { animated } from "react-spring";
 
@@ -20,6 +20,12 @@ export const SidebarContent = styled.div`
   justify-content: space-between;
   padding: 1.5rem;
   height: calc(100% - 3rem);
+`;
+
+export const SidebarScroll = styled.div`
+  ${Scrollbar};
+  overflow: auto;
+  height: fit-content;
 `;
 
 export const SidebarIconWrapper = styled.div`

@@ -39,8 +39,8 @@ const OptionsDesktop = () => {
 
   return (
     <NavDesktopWrapper>
-      <NavOpt>{t("navbar.simulation")}</NavOpt>
-      <NavOpt>{t("navbar.support")}</NavOpt>
+      <NavOpt>{t("simulation")}</NavOpt>
+      <NavOpt>{t("support")}</NavOpt>
       <NavOpt onClick={changeLanguage} uppercase>
         {i18n.language}
       </NavOpt>
