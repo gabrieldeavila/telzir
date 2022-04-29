@@ -6,6 +6,8 @@
   "choose": "Use",
   "company": "Empresa",
   "home": {
+    "plans": "Planos Disponíveis",
+    "simulation": "Simulador",
     "best": "Melhor custo benefício",
     "basic_title": "FaleMais 30",
     "basic_description": "30min/mês",
@@ -27,5 +29,16 @@
       "standard_advantage_3": "Suporte 24h em todo o território nacional",
       "standard_advantage_4": "Todos os demais benefícios Telzir."
     }
+  },
+  "form": {
+    "call_time": "Tempo de Ligação (min)",
+    "ddd_from": "DDD de Origem",
+    "ddd_to": "DDD de Destino",
+    "choose_plan": "Plano Escolhido"
+  },
+  "simulation_page": {
+    "basic": "FaleMais 30",
+    "premium": "FaleMais 60",
+    "standard": "FaleMais 120"
   }
 }
