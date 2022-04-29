@@ -13,18 +13,23 @@ import {
   PlanBest,
   PlanDescription,
   PlanTitle,
+  SectionTitle,
   SloganTextDark,
   SloganTextRed,
 } from "./style";
 import { AdvantagesProps } from "./interfaces";
 import { BsCheck2 } from "react-icons/bs";
 import { allPlans } from "./helper";
+import Simulation from "../../components/Simulation";
 
 export default function Home() {
+  const { state } = useContext(GlobalContext);
+
   return (
-    <HomeWrapper>
+    <HomeWrapper mobile={state.isMobile}>
       <Slogan />
       <Plans />
+      <Simulation />
     </HomeWrapper>
   );
 }
@@ -52,16 +57,19 @@ const Plans = () => {
   const { state } = useContext(GlobalContext);
 
   return (
-    <HomePlansWrapper mobile={state.isMobile}>
-      {allPlans.map((plan) => (
-        <HomePlan>
-          {plan.best && <PlanBest>{t("home.best")}</PlanBest>}
-          <PlanTitle>{t(`home.${plan.title}`)}</PlanTitle>
-          <PlanDescription>{t(`home.${plan.description}`)}</PlanDescription>
-          <Advantages advantages={plan.advantages} />
-        </HomePlan>
-      ))}
-    </HomePlansWrapper>
+    <>
+      <SectionTitle>{t("home.plans")}</SectionTitle>
+      <HomePlansWrapper mobile={state.isMobile}>
+        {allPlans.map((plan, index) => (
+          <HomePlan key={index}>
+            {plan.best && <PlanBest>{t("home.best")}</PlanBest>}
+            <PlanTitle>{t(`home.${plan.title}`)}</PlanTitle>
+            <PlanDescription>{t(`home.${plan.description}`)}</PlanDescription>
+            <Advantages advantages={plan.advantages} />
+          </HomePlan>
+        ))}
+      </HomePlansWrapper>
+    </>
   );
 };
 

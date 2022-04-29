@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { black, grey, red } from "../../assets/base/colors";
 import { ContainerSettings, Flex } from "./../../assets/base/mixins";
 import { HomeMobileProps } from "./interfaces";
 
-export const HomeWrapper = styled.div`
-  padding: 1rem;
+export const HomeWrapper = styled.div<HomeMobileProps>`
+  padding: ${(props) => (props.mobile ? "1rem" : "4rem")};
   padding-top: 6rem;
 `;
 
@@ -48,7 +48,7 @@ export const HomePlansWrapper = styled.div<HomeMobileProps>`
   ${Flex};
   flex-direction: ${(props) => (props.mobile ? "column" : "row")};
   gap: 1rem;
-  margin: 2rem 0;
+  margin-bottom: 1rem;
 `;
 
 export const HomePlan = styled.div`
@@ -59,6 +59,15 @@ export const HomePlan = styled.div`
   gap: 0.75rem;
   padding: 1.5rem;
   width: calc(100% - 3rem);
+`;
+
+export const SectionTitle = styled.p`
+  font-weight: 700;
+  align-self: flex-start;
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
 `;
 
 export const PlanTitle = styled.p`
