@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { white } from "../../assets/base/colors";
 import { BoxShadow, Flex } from "./../../assets/base/mixins";
 import { NavOptionsInterface, NavWrapperInterface } from "./interface";
@@ -9,6 +9,7 @@ export const Nav = styled.nav`
   width: 100%;
   background: ${white};
   height: 80px;
+  z-index: 2;
 `;
 
 export const NavWrapper = styled.div<NavWrapperInterface>`
@@ -29,3 +30,4 @@ export const NavOpt = styled.div<NavOptionsInterface>`
   font-weight: 600;
   text-transform: ${(props) => (props.uppercase ? "uppercase" : "none")};
 `;
+//

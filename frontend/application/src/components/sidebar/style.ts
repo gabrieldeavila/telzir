@@ -10,6 +10,7 @@ export const SidebarWrapper = styled(animated.div)<any>`
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 3;
   background: ${black};
 `;
 

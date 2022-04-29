@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { Flex } from "../../assets/base/mixins";
 import { LogoProps, LogoOptions } from "./interface";
 

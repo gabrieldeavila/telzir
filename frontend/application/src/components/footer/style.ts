@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { black, white } from "../../assets/base/colors";
 import { ContainerSettings, Flex } from "../../assets/base/mixins";
 import { CompanyProps, FooterMobileProps } from "./interface";
@@ -12,7 +12,7 @@ export const FooterWrapper = styled.div<FooterMobileProps>`
   gap: 2rem;
   padding: ${(props) => (props.mobile ? "1.5rem" : "1.5rem 4rem")};
 `;
-
+//
 export const Company = styled.div`
   ${Flex};
   flex-direction: column;
