@@ -12,7 +12,7 @@ i18n
   .use(initReactI18next)
   // init i18next
   .init({
-    debug: true, // if false, it will not log  errors to console
+    debug: false, // if false, it will not log  errors to console
     fallbackLng: "en", //default language, if not available in user language
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
