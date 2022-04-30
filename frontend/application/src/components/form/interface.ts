@@ -1,5 +1,7 @@
 export interface FormProps {
   submitText?: string;
+  schema: "simulation";
+  children: JSX.Element[];
 }
 
 export interface ButtonProps {

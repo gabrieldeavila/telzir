@@ -12,7 +12,7 @@ export default function Simulation() {
     <>
       <SectionTitle>{t("home.simulation")}</SectionTitle>
       <SimulationWrapper>
-        <Form>
+        <Form schema="simulation">
           <Select avoidSelectLabel name="ddd_from">
             <Options use="ddd" />
           </Select>

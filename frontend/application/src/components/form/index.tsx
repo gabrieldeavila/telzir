@@ -4,6 +4,8 @@ import { CloneProps, FormProps } from "./interface";
 import _ from "lodash";
 import { FormWrapper, InputLabel, InputWrapper } from "./style";
 import { useTranslation } from "react-i18next";
+import schemas from "./schema";
+import { ObjectType } from "typescript";
 
 function Basic({
   errors,
@@ -15,7 +17,7 @@ function Basic({
   children,
   setValues,
   ...props
-}: any | FormProps) {
+}: any) {
   const { t } = useTranslation();
   children = children.length > 1 ? children : [children];
 
@@ -54,7 +56,7 @@ const Clone = ({
   errors,
 }: CloneProps) => {
   let button = {
-    disabled: isSubmitting || !_.isEmpty(errors),
+    // disabled: isSubmitting || !_.isEmpty(errors),
     type: "submit",
   };
 
@@ -72,11 +74,14 @@ const Clone = ({
 
 const Form = withFormik({
   // adding initial values to the component
-  mapPropsToValues: (prop: any) => {
+  mapPropsToValues: (prop: FormProps) => {
     let initialValues = {};
+
     let children = prop.children.length > 1 ? prop.children : [prop.children];
 
     children.forEach((child: any) => {
+      if (!child.props.name) return;
+
       initialValues = {
         ...initialValues,
         [child.props.name]: "",
@@ -87,18 +92,20 @@ const Form = withFormik({
   },
 
   // fields validation
-  validate(values) {
-    const errors = {};
-    return errors;
-  },
+  async validate(values, props: FormProps) {},
 
   // submit handler
   handleSubmit(values, { props, setSubmitting }) {
     console.log(values);
+    const { schema } = props;
+    const keys = Object.keys(values);
 
-    setTimeout(() => {
-      setSubmitting(false);
-    }, 400);
+    const validateSchema = schemas[schema];
+    let teste = validateSchema.validateSync(values);
+    console.log(teste);
+    setSubmitting(false);
+    return;
+    setTimeout(() => {}, 400);
   },
 })(Basic);
 
