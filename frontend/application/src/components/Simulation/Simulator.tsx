@@ -10,12 +10,16 @@ import {
   SubmitValues,
 } from "./interface";
 import { useCallback } from "react";
+import { setSimulate } from "./../../redux/effects/Simulate";
+import { useDispatch } from "react-redux";
 
 export default function Simulator({ mode, setMode }: ModeProps) {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
 
   const handleSubmit = useCallback((values: SubmitValues) => {
-    console.log(values);
+    // @ts-ignore
+    dispatch(setSimulate(values));
     setMode("result");
   }, []);
 

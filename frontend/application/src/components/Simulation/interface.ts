@@ -12,7 +12,7 @@ export interface SimulationProps {
 export interface SubmitValues {
   ddd_from: string;
   ddd_to: string;
-  call_time: string;
+  call_time: number;
   choose_plan: string;
 }
 
@@ -24,7 +24,7 @@ export const selectOptions = {
 export interface ResultProps {
   ddd_from: string;
   ddd_to: string;
-  call_duration: number;
+  call_time: number;
   choose_plan: string;
   with_telzir: number;
   without_telzir: number;
@@ -34,7 +34,7 @@ export interface ResultProps {
 export const result = {
   ddd_from: "017",
   ddd_to: "018",
-  call_duration: 8,
+  call_time: 8,
   choose_plan: "premium",
   with_telzir: 0,
   without_telzir: 23.2,
