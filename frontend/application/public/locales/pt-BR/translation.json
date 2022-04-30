@@ -31,6 +31,7 @@
     }
   },
   "form": {
+    "warning": "Verifique se todos os campos foram preenchidos corretamente.",
     "call_time": "Tempo de Ligação (min)",
     "ddd_from": "DDD de Origem",
     "ddd_to": "DDD de Destino",
@@ -39,6 +40,14 @@
   "simulation_page": {
     "basic": "FaleMais 30",
     "premium": "FaleMais 60",
-    "standard": "FaleMais 120"
+    "standard": "FaleMais 120",
+    "simulate": "Simular",
+    "simulation": "Simulação"
+  },
+  "yup_message": {
+    "string": "Digite uma string",
+    "required": "Campo obrigatório",
+    "number": "Digite um número",
+    "min_zero": "Digite um número maior que zero"
   }
 }

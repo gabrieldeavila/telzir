@@ -9,10 +9,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  useEffect(() => {
-    toast("Wow so easy!");
-  }, []);
-
   return (
     <GlobalProvider>
       <Navbar />

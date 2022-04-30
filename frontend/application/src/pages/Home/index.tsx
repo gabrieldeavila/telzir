@@ -20,7 +20,7 @@ import {
 import { AdvantagesProps } from "./interfaces";
 import { BsCheck2 } from "react-icons/bs";
 import { allPlans } from "./helper";
-import Simulation from "../../components/Simulation";
+import Simulation from "../../components/simulation";
 
 export default function Home() {
   const { state } = useContext(GlobalContext);
