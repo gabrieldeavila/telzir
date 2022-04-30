@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { SectionTitle } from "../../pages/Home/style";
 import { ModeProps, result } from "./interface";
@@ -10,12 +10,17 @@ import {
   ResultWrapper,
 } from "./style";
 import { useFormat } from "../../hooks/useFormat";
+import { Button } from "../form/style";
 
 export default function Result(props: ModeProps) {
   const { t } = useTranslation();
   const { format, formatTelzirLogo } = useFormat();
 
   const keys = Object.keys(result);
+
+  const goBack = useCallback(() => {
+    props.setMode("simulator");
+  }, [props.mode]);
 
   return (
     <>
@@ -36,6 +41,9 @@ export default function Result(props: ModeProps) {
           );
         })}
       </ResultWrapper>
+      <Button submit={false} onClick={goBack}>
+        {t("simulation_page.back")}
+      </Button>
     </>
   );
 }

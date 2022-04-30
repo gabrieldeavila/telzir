@@ -8,7 +8,8 @@ export const GlobalStyle = createGlobalStyle`
   ${reset};
   ${Scrollbar};
   * {
-    font-family: 'Montserrat', sans-serif !important
+    font-family: 'Montserrat', sans-serif !important;
+    user-select: none
   }
   body {
     background-color: ${white} ;

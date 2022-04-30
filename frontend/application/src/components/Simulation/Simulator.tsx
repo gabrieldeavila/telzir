@@ -16,6 +16,7 @@ export default function Simulator({ mode, setMode }: ModeProps) {
 
   const handleSubmit = useCallback((values: SubmitValues) => {
     console.log(values);
+    setMode("result");
   }, []);
 
   return (

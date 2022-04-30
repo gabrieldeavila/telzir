@@ -2,6 +2,7 @@ import { t } from "i18next";
 import { useCallback } from "react";
 import Logo from "../components/logo";
 import _ from "lodash";
+import { FormattedLogo } from "../components/logo/style";
 
 export const useFormat = () => {
   const format = (type: string, value: string | number) => {
@@ -35,12 +36,16 @@ export const useFormat = () => {
   const formatTelzirLogo = (phrase: string) => {
     let parts = phrase.split("Telzir.");
 
-    return parts.map((part) => {
-      if (_.isEmpty(part)) {
-        return <Logo type="dark" size="sm" />;
-      }
-      return part;
-    });
+    return (
+      <FormattedLogo>
+        {parts.map((part) => {
+          if (_.isEmpty(part)) {
+            return <Logo type="dark" size="sm" />;
+          }
+          return part;
+        })}
+      </FormattedLogo>
+    );
   };
 
   return { format, formatTelzirLogo };

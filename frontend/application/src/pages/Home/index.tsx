@@ -83,20 +83,11 @@ const Advantages = ({ advantages }: AdvantagesProps) => {
     <>
       {advantages.map((advantage, index) => {
         let advName = t(`home.advantages.${advantage}`);
-        let hasTelzir = false;
-
-        // if the advantage has "Telzir.", add the telzir icon
-        // if (advName.includes("Telzir.")) {
-        //   advName = advName.replace("Telzir.", "");
-        //   hasTelzir = true;
-        // }
 
         return (
           <PlanAdvantage key={index}>
             <BsCheck2 fontSize={20} />
             {formatTelzirLogo(advName)}
-            {/* {advName} */}
-            {/* {hasTelzir && <Logo type="dark" size="sm" />} */}
           </PlanAdvantage>
         );
       })}

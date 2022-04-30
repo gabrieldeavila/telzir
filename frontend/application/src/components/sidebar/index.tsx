@@ -18,6 +18,7 @@ export default function Sidebar() {
   const { state, setState, changeLanguage } = useContext(GlobalContext);
   const { t } = useTranslation();
   const windowWidth = window.innerWidth;
+  const ref = React.useRef<HTMLDivElement>(null);
 
   // toggle the sidebar
   const closeSidebar = () => {
@@ -30,6 +31,7 @@ export default function Sidebar() {
   // animate the sidebar
   const styles = useSpring({
     loop: false,
+    immediate: !ref.current,
     from: {
       translateX: state.isSidebarOpen ? windowWidth * 2 : 0,
       opacity: state.isSidebarOpen ? 0 : 1,
@@ -40,11 +42,11 @@ export default function Sidebar() {
     },
   });
 
-  // avoid the sidebar to be open when the window is not smaller than 768px
+  // prevent sidebar from opening when window is not smaller than 768px
   if (!state.isMobile) return null;
-  //
+
   return (
-    <SidebarWrapper style={styles}>
+    <SidebarWrapper ref={ref} style={styles}>
       <SidebarContent>
         <SidebarScroll>
           <SidebarIconWrapper onClick={closeSidebar}>

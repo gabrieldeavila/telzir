@@ -50,7 +50,8 @@
     "choose_plan": "Plano Escolhido",
     "with_telzir": "Com Telzir.",
     "without_telzir": "Sem Telzir.",
-    "economy": "Economia"
+    "economy": "Economia",
+    "back": "Nova Simulação"
   },
   "yup_message": {
     "string": "Digite uma string",

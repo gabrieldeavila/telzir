@@ -5,7 +5,7 @@ import Result from "./Result";
 import Simulator from "./Simulator";
 
 export default function Simulation() {
-  const [mode, setMode] = useState<"simulator" | "result">("result");
+  const [mode, setMode] = useState<"simulator" | "result">("simulator");
 
   const settings = { setMode, mode };
 

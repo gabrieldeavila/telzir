@@ -18,3 +18,11 @@ export const LogoWrapper = styled.div<LogoProps>`
   ${Flex};
   justify-content: ${(props) => (props.justify ? props.justify : "flex-start")};
 `;
+
+export const FormattedLogo = styled.div`
+  ${Flex};
+  justify-content: flex-start;
+  gap: 0.25rem;
+  text-align: justify;
+  flex-wrap: wrap;
+`;

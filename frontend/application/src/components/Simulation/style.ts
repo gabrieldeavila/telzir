@@ -12,8 +12,9 @@ export const ResultWrapper = styled.div`
   ${BoxShadow}
   flex-direction: column;
   gap: 1.5rem;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 3px;
+  margin-bottom: 2rem;
 `;
 
 export const ResultItem = styled.div`
