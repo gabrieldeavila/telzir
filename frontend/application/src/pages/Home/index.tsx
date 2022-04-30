@@ -21,6 +21,7 @@ import { AdvantagesProps } from "./interfaces";
 import { BsCheck2 } from "react-icons/bs";
 import { allPlans } from "./helper";
 import Simulation from "../../components/simulation";
+import { useFormat } from "../../hooks/useFormat";
 
 export default function Home() {
   const { state } = useContext(GlobalContext);
@@ -76,6 +77,7 @@ const Plans = () => {
 // render the plans' advantages
 const Advantages = ({ advantages }: AdvantagesProps) => {
   const { t } = useTranslation();
+  const { formatTelzirLogo } = useFormat();
 
   return (
     <>
@@ -84,16 +86,17 @@ const Advantages = ({ advantages }: AdvantagesProps) => {
         let hasTelzir = false;
 
         // if the advantage has "Telzir.", add the telzir icon
-        if (advName.includes("Telzir.")) {
-          advName = advName.replace("Telzir.", "");
-          hasTelzir = true;
-        }
+        // if (advName.includes("Telzir.")) {
+        //   advName = advName.replace("Telzir.", "");
+        //   hasTelzir = true;
+        // }
 
         return (
           <PlanAdvantage key={index}>
             <BsCheck2 fontSize={20} />
-            {advName}
-            {hasTelzir && <Logo type="dark" size="sm" />}
+            {formatTelzirLogo(advName)}
+            {/* {advName} */}
+            {/* {hasTelzir && <Logo type="dark" size="sm" />} */}
           </PlanAdvantage>
         );
       })}

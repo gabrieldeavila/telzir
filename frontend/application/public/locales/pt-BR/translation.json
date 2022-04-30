@@ -42,12 +42,23 @@
     "premium": "FaleMais 60",
     "standard": "FaleMais 120",
     "simulate": "Simular",
-    "simulation": "Simulação"
+    "simulation": "Simulação",
+    "result": "Resultado",
+    "ddd_from": "DDD de Origem",
+    "ddd_to": "DDD de Destino",
+    "call_duration": "Tempo de Ligação",
+    "choose_plan": "Plano Escolhido",
+    "with_telzir": "Com Telzir.",
+    "without_telzir": "Sem Telzir.",
+    "economy": "Economia"
   },
   "yup_message": {
     "string": "Digite uma string",
     "required": "Campo obrigatório",
     "number": "Digite um número",
     "min_zero": "Digite um número maior que zero"
-  }
+  },
+  "basic": "FaleMais 30",
+  "premium": "FaleMais 60",
+  "standard": "FaleMais 120"
 }
