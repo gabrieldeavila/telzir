@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import { black, white } from "../../assets/base/colors";
+import { black, red, white } from "../../assets/base/colors";
 import { BoxShadow, Flex, FormSettings } from "./../../assets/base/mixins";
 import { ButtonProps, LabelProps, SelectProps } from "./interface";
 
@@ -18,18 +18,6 @@ export const InputWrapper = styled.div`
 export const Input = styled.input`
   ${FormSettings};
 `;
-
-export const Select = styled.select<SelectProps>`
-  ${BoxShadow};
-  ${FormSettings};
-  height: calc(30px + 2rem);
-  width: 100%;
-  font-size-adjust: 0.3;
-`;
-
-//
-
-export const Option = styled.option``;
 
 export const InputLabel = styled.label<LabelProps>`
   color: ${black};
@@ -57,6 +45,25 @@ export const InputLabel = styled.label<LabelProps>`
     font-size: 14px;
     `}
 `;
+
+export const InputError = styled.div`
+  height: 10px;
+
+  span {
+    color: ${red};
+    font-size: 10px;
+  }
+`;
+
+export const Select = styled.select<SelectProps>`
+  ${BoxShadow};
+  ${FormSettings};
+  height: calc(30px + 2rem);
+  width: 100%;
+  font-size-adjust: 0.3;
+`;
+
+export const Option = styled.option``;
 
 export const Button = styled.button<ButtonProps>`
   border-radius: 3px;

@@ -1,22 +1,25 @@
 import React from "react";
 import { withFormik } from "formik";
-import { CloneProps, FormProps } from "./interface";
+import { CloneProps, FormProps, ValidateProps } from "./interface";
 import _ from "lodash";
-import { FormWrapper, InputLabel, InputWrapper } from "./style";
+import { FormWrapper, InputError, InputLabel, InputWrapper } from "./style";
 import { useTranslation } from "react-i18next";
 import schemas from "./schema";
 import { ObjectType } from "typescript";
+import { toast } from "react-toastify";
+import { t } from "i18next";
+import { getChildProps, handleErrors, handleInitialValues } from "./helpers";
 
+// prettier-ignore
 function Basic({
   errors,
   handleSubmit,
   isSubmitting,
   values,
-  setFieldValue,
   setFieldTouched,
   children,
   setValues,
-  ...props
+  touched,
 }: any) {
   const { t } = useTranslation();
   children = children.length > 1 ? children : [children];
@@ -27,19 +30,22 @@ function Basic({
         let name = child.props.name;
         return (
           <InputWrapper key={index}>
-            <Clone
-              {...{ setValues, values, child, name, isSubmitting, errors }}
+            <Clone 
+              {...{ setValues, setFieldTouched, values, child, name, isSubmitting, errors }}
             />
 
-            {/* when value is not empty, show label like a placeholder */}
             {!child.props.submit && (
               <InputLabel
-                show={!_.isEmpty(values[name])}
-                avoidLabelFocus={child.props?.avoidSelectLabel}
+                show={!_.isEmpty(values[name])} //when value is empty, show label like a placeholder
+                avoidLabelFocus={child.props?.avoidSelectLabel} //when select label is focused, don't show label
               >
                 {t(`form.${name}`)}
               </InputLabel>
             )}
+
+            <InputError>
+              {errors[name] && touched[name] && <span>{t(`yup_message.${errors[name]}`)}</span>}
+            </InputError>
           </InputWrapper>
         );
       })}
@@ -47,27 +53,9 @@ function Basic({
   );
 }
 
-const Clone = ({
-  setValues,
-  values,
-  child,
-  name,
-  isSubmitting,
-  errors,
-}: CloneProps) => {
-  let button = {
-    // disabled: isSubmitting || !_.isEmpty(errors),
-    type: "submit",
-  };
-
-  let receiveValues = {
-    onChange: (e: any) => {
-      setValues({ ...values, [name]: e.target.value });
-    },
-    value: values[name] || "",
-  };
-
-  let childProps = child.props.submit ? button : receiveValues;
+const Clone = ({ ...cloneProps }: CloneProps) => {
+  let child = cloneProps.child;
+  let childProps = getChildProps(cloneProps);
 
   return React.cloneElement(child, childProps);
 };
@@ -75,37 +63,21 @@ const Clone = ({
 const Form = withFormik({
   // adding initial values to the component
   mapPropsToValues: (prop: FormProps) => {
-    let initialValues = {};
-
-    let children = prop.children.length > 1 ? prop.children : [prop.children];
-
-    children.forEach((child: any) => {
-      if (!child.props.name) return;
-
-      initialValues = {
-        ...initialValues,
-        [child.props.name]: "",
-      };
-    });
+    let initialValues = handleInitialValues(prop.children);
 
     return initialValues;
   },
 
   // fields validation
-  async validate(values, props: FormProps) {},
+  async validate(values, props: FormProps) {
+    let errors = await handleErrors(values, props);
+    return errors;
+  },
 
   // submit handler
-  handleSubmit(values, { props, setSubmitting }) {
-    console.log(values);
-    const { schema } = props;
-    const keys = Object.keys(values);
-
-    const validateSchema = schemas[schema];
-    let teste = validateSchema.validateSync(values);
-    console.log(teste);
-    setSubmitting(false);
-    return;
-    setTimeout(() => {}, 400);
+  async handleSubmit(values, { props, setSubmitting }) {
+    setSubmitting(true);
+    props.onSubmit(values);
   },
 })(Basic);
 
