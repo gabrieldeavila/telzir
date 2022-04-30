@@ -3,5 +3,63 @@
   "support": "Support",
   "language": "Change language to Portuguese",
   "evolution": "Want to be the best?",
-  "choose": "Choose"
+  "choose": "Choose",
+  "company": "Company",
+  "home": {
+    "plans": "Available Plans",
+    "simulation": "Simulator",
+    "best": "Best value for money",
+    "basic_title": "TalkMore 30",
+    "basic_description": "30min/month",
+    "premium_title": "TalkMore 60",
+    "premium_description": "60min/month",
+    "standard_title": "TalkMore 120",
+    "standard_description": "120min/month",
+    "advantages": {
+      "basic_advantage_1": "Thirty minutes free",
+      "basic_advantage_2": "Get access to long distance calls",
+      "basic_advantage_3": "24/7 support nationwide",
+      "basic_advantage_4": "All other Telzir. benefits",
+      "premium_advantage_1": "Sixty minutes free",
+      "premium_advantage_2": "Get access to long distance calls",
+      "premium_advantage_3": "24/7 support nationwide",
+      "premium_advantage_4": "All other Telzir. benefits",
+      "standard_advantage_1": "One hundred and twenty free minutes",
+      "standard_advantage_2": "Get access to long distance calls",
+      "standard_advantage_3": "24/7 support nationwide",
+      "standard_advantage_4": "All other Telzir. benefits"
+    }
+  },
+  "form": {
+    "warning": "Check that all fields are filled in correctly.",
+    "call_time": "Call Time (min)",
+    "ddd_from": "DDD From",
+    "ddd_to": "DDD To",
+    "choose_plan": "Chosen Plan"
+  },
+  "simulation_page": {
+    "basic": "TalkMore 30",
+    "premium": "TalkMore 60",
+    "standard": "TalkMore 120",
+    "simulate": "Simulate",
+    "simulation": "Simulation",
+    "result": "Result",
+    "ddd_from": "DDD From",
+    "ddd_to": "DDD To",
+    "call_time": "Call Time",
+    "choose_plan": "Chosen Plan",
+    "with_telzir": "With Telzir.",
+    "without_telzir": "Without Telzir.",
+    "economy": "Economy",
+    "back": "New Simulation"
+  },
+  "yup_message": {
+    "string": "Enter a string",
+    "required": "Required field",
+    "number": "Enter a number",
+    "min_zero": "Enter a number greater than zero"
+  },
+  "basic": "TalkMore 30",
+  "premium": "TalkMore 60",
+  "standard": "TalkMore 120"
 }
