@@ -36,16 +36,32 @@ export const useFormat = () => {
   const formatTelzirLogo = (phrase: string) => {
     let parts = phrase.split("Telzir.");
 
-    return (
-      <FormattedLogo>
-        {parts.map((part) => {
-          if (_.isEmpty(part)) {
-            return <Logo type="dark" size="sm" />;
-          }
-          return part;
-        })}
-      </FormattedLogo>
-    );
+    if (parts.length > 1) {
+      return (
+        <FormattedLogo>
+          {parts.map((part) => {
+            // doesn't return if the part is empty
+            if (_.isEmpty(part)) {
+              return;
+            }
+
+            // if the part is the first, it's the Telzir. part
+            if (part.length % 2 !== 0) {
+              return part;
+            }
+
+            return (
+              <>
+                {part}
+                <Logo type="dark" size="sm" />
+              </>
+            );
+          })}
+        </FormattedLogo>
+      );
+    }
+
+    return phrase;
   };
 
   return { format, formatTelzirLogo };
