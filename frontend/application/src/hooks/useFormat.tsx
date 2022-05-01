@@ -1,5 +1,5 @@
 import { t } from "i18next";
-import { useCallback } from "react";
+import React from "react";
 import Logo from "../components/logo";
 import _ from "lodash";
 import { FormattedLogo } from "../components/logo/style";
@@ -44,7 +44,7 @@ export const useFormat = () => {
     if (parts.length > 1) {
       return (
         <FormattedLogo>
-          {parts.map((part) => {
+          {parts.map((part, index) => {
             // doesn't return if the part is empty
             if (_.isEmpty(part)) {
               return;
@@ -56,10 +56,10 @@ export const useFormat = () => {
             }
 
             return (
-              <>
+              <React.Fragment key={index}>
                 {part}
                 <Logo type="dark" size="sm" />
-              </>
+              </React.Fragment>
             );
           })}
         </FormattedLogo>

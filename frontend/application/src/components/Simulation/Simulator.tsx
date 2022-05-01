@@ -54,8 +54,8 @@ const Options = ({ use }: SimulationProps) => {
   return (
     <>
       <Option value={undefined}></Option>
-      {options.map((option) => (
-        <Option value={option}>
+      {options.map((option, index) => (
+        <Option key={index} value={option}>
           {use === "ddd" ? option : t(`simulation_page.${option}`)}
         </Option>
       ))}
