@@ -8,13 +8,13 @@ It is structured in two folders: the first one is the backend, where all code is
 
 # Content
 
-- [Mockups](##Mockups)
-  - [Mobile](###Mobile)
-  - [Desktop](###Desktop)
-- [Setup](##Setup)
-  - [Backend](##Backend)
-    - [Testing](####Testing)
-  - [Frontend](##Backend)
+- [Mockups](#mockups)
+  - [Mobile](#mobile)
+  - [Desktop](#desktop)
+- [Setup](#setup)
+  - [Backend](#backend)
+    - [Testing](#testing)
+  - [Frontend](#frontend)
   <!--te-->
 
 ## Mockups
