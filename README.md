@@ -38,6 +38,13 @@ It is structured in two folders: the first one is the backend, where all code is
 <h2 align="center">Follow this commands:</h2>
 
 ```js
+// if you are using github, clone this project:
+
+git clone https://github.com/gabrieldeavila/telzir.git
+
+```
+
+```js
 // Verify if node and yarn are installed
 
 node - v;
