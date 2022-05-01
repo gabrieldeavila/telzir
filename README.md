@@ -130,7 +130,7 @@ frontend\application
 
 ```js
 yarn install
-yarn run
+yarn start
 ```
 
 <p>Frontend is running on port:3000!</p>
