@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "set NODE_ENV=dev&& nodemon",
-    "test": "jest",
+    "test": "jest ./build/test/talkmore.test.js",
     "build": "tsc"
   },
   "dependencies": {
@@ -25,6 +25,7 @@
     "nodemon": "^2.0.16",
     "rimraf": "^3.0.2",
     "sequelize": "^6.19.0",
+    "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.4"
   }
