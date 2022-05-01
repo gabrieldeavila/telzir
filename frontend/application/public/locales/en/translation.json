@@ -6,6 +6,7 @@
   "choose": "Choose",
   "company": "Company",
   "home": {
+    "warning": "Excess minutes have a 10% surcharge on the normal minute rate",
     "plans": "Available Plans",
     "simulation": "Simulator",
     "best": "Best value for money",

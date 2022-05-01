@@ -59,3 +59,8 @@ export const SidebarLine = styled.p`
   width: 30%;
   height: 0.1rem;
 `;
+
+export const SidebarAnchor = styled.a`
+  color: ${white};
+  text-decoration: none;
+`;

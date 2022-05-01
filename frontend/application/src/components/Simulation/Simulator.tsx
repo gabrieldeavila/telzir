@@ -13,7 +13,7 @@ import { useCallback } from "react";
 import { setSimulate } from "./../../redux/effects/Simulate";
 import { useDispatch } from "react-redux";
 
-export default function Simulator({ mode, setMode }: ModeProps) {
+export default function Simulator({ setMode }: ModeProps) {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
@@ -25,7 +25,9 @@ export default function Simulator({ mode, setMode }: ModeProps) {
 
   return (
     <>
-      <SectionTitle>{t("simulation_page.simulation")}</SectionTitle>
+      <SectionTitle id="simulation">
+        {t("simulation_page.simulation")}
+      </SectionTitle>
       <SimulationWrapper>
         <Form schema="simulation" onSubmit={handleSubmit}>
           <Select avoidSelectLabel name="ddd_from">
@@ -34,7 +36,7 @@ export default function Simulator({ mode, setMode }: ModeProps) {
           <Select avoidSelectLabel name="ddd_to">
             <Options use="ddd" />
           </Select>
-          <Input type="number" name="call_time" min="0" />
+          <Input type="number" name="call_time" min="0" step=".1" />
           <Select avoidSelectLabel name="choose_plan">
             <Options use="plan" />
           </Select>

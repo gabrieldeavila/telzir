@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/global";
 import {
+  SidebarAnchor,
   SidebarContent,
   SidebarIconWrapper,
   SidebarLine,
@@ -57,7 +58,11 @@ export default function Sidebar() {
             <SidebarOptionsText onClick={changeLanguage}>
               {t("language")}
             </SidebarOptionsText>
-            <SidebarOptionsText>{t("simulation")}</SidebarOptionsText>
+            <SidebarOptionsText>
+              <SidebarAnchor onClick={closeSidebar} href="#simulation">
+                {t("simulation")}
+              </SidebarAnchor>
+            </SidebarOptionsText>
           </SidebarOptions>
 
           <SidebarLine />

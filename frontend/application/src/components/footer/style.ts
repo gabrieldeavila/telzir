@@ -32,7 +32,7 @@ export const Social = styled.div`
   gap: 1rem;
 `;
 
-export const SocialIcon = styled.button`
+export const SocialIcon = styled.a`
   background: ${black};
   color: ${white};
   border-radius: 50%;
@@ -41,8 +41,14 @@ export const SocialIcon = styled.button`
   border: none;
   ${Flex};
   cursor: pointer;
+  transition: all 0.1s ease-in-out;
 
   svg {
     font-size: 1.2rem;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
   }
 `;

@@ -27,13 +27,13 @@ export default function Footer() {
         </CompanyText>
       </Company>
       <Social>
-        <SocialIcon>
+        <SocialIcon href="https://www.facebook.com/" target="_blank">
           <GrFacebookOption />
         </SocialIcon>
-        <SocialIcon>
+        <SocialIcon href="https://www.instagram.com/" target="_blank">
           <GrInstagram />
         </SocialIcon>
-        <SocialIcon>
+        <SocialIcon href="https://www.twitter.com/" target="_blank">
           <GrTwitter />
         </SocialIcon>
       </Social>

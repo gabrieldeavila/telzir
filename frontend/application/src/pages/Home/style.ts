@@ -4,7 +4,7 @@ import { ContainerSettings, Flex } from "./../../assets/base/mixins";
 import { HomeMobileProps } from "./interfaces";
 
 export const HomeWrapper = styled.div<HomeMobileProps>`
-  padding: ${(props) => (props.mobile ? "1rem" : "4rem")};
+  padding: ${(props) => (props.mobile ? "1rem 1rem 3rem" : "4rem")};
   padding-top: 6rem;
 `;
 
@@ -68,6 +68,13 @@ export const SectionTitle = styled.p`
   font-size: 1.5rem;
   margin-bottom: 2rem;
   margin-top: 3rem;
+  color: ${black};
+`;
+
+export const SectionWarning = styled(SectionTitle)`
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  font-weight: 400;
 `;
 
 export const PlanTitle = styled.p`

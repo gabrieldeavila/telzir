@@ -14,6 +14,7 @@ import {
   PlanDescription,
   PlanTitle,
   SectionTitle,
+  SectionWarning,
   SloganTextDark,
   SloganTextRed,
 } from "./style";
@@ -70,6 +71,7 @@ const Plans = () => {
           </HomePlan>
         ))}
       </HomePlansWrapper>
+      <SectionWarning>{t("home.warning")}</SectionWarning>
     </>
   );
 };

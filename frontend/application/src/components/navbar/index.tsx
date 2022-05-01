@@ -1,5 +1,5 @@
 import React, { useCallback, useContext } from "react";
-import { Nav, NavDesktopWrapper, NavOpt, NavWrapper } from "./style";
+import { Nav, NavAnchor, NavDesktopWrapper, NavOpt, NavWrapper } from "./style";
 import Logo from "../logo/index";
 import { AiOutlineMenu } from "react-icons/ai";
 import { GlobalContext } from "../../contexts/global";
@@ -39,8 +39,17 @@ const OptionsDesktop = () => {
 
   return (
     <NavDesktopWrapper>
-      <NavOpt>{t("simulation")}</NavOpt>
-      <NavOpt>{t("support")}</NavOpt>
+      <NavOpt>
+        <NavAnchor href="#simulation">{t("simulation")}</NavAnchor>
+      </NavOpt>
+      <NavOpt>
+        <NavAnchor
+          href="https://api.whatsapp.com/send?phone=5554996122858"
+          target="_blank"
+        >
+          {t("support")}
+        </NavAnchor>
+      </NavOpt>
       <NavOpt onClick={changeLanguage} uppercase>
         {i18n.language}
       </NavOpt>

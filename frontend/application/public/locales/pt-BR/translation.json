@@ -6,6 +6,7 @@
   "choose": "Use",
   "company": "Empresa",
   "home": {
+    "warning": "Os minutos excedentes tem um acréscimo de 10% sobre a tarifa normal do minuto",
     "plans": "Planos Disponíveis",
     "simulation": "Simulador",
     "best": "Melhor custo benefício",

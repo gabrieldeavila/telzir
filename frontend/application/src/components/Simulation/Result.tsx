@@ -38,7 +38,7 @@ export default function Result({ setMode, mode }: ModeProps) {
 
   return (
     <>
-      <SectionTitle>{t("simulation_page.result")}</SectionTitle>
+      <SectionTitle id="simulation">{t("simulation_page.result")}</SectionTitle>
       <ResultWrapper>
         {_.isEmpty(simulationResult.choose_plan) ? (
           <Loader />

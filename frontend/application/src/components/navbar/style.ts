@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import { white } from "../../assets/base/colors";
+import { black, white } from "../../assets/base/colors";
 import { BoxShadow, Flex } from "./../../assets/base/mixins";
 import { NavOptionsInterface, NavWrapperInterface } from "./interface";
 
@@ -10,6 +10,11 @@ export const Nav = styled.nav`
   background: ${white};
   height: 80px;
   z-index: 2;
+`;
+
+export const NavAnchor = styled.a`
+  color: ${black};
+  text-decoration: none;
 `;
 
 export const NavWrapper = styled.div<NavWrapperInterface>`
@@ -26,8 +31,14 @@ export const NavDesktopWrapper = styled.div`
 
 export const NavOpt = styled.div<NavOptionsInterface>`
   cursor: pointer;
+  color: ${black};
   user-select: none;
   font-weight: 600;
   text-transform: ${(props) => (props.uppercase ? "uppercase" : "none")};
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    opacity: 0.5;
+  }
 `;
 //
