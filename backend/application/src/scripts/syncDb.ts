@@ -2,7 +2,18 @@ const mysql = require("mysql2");
 
 require("dotenv").config();
 
-const getQuery = async (query: string, params: []) => {
+
+const getQuery = async (sql: string, params: []) => {
+  const con = createConnection();
+
+  let data = await doQuery(con, sql, params);
+
+  con.end();
+  
+  return data;
+};
+
+const createConnection = () => {
   const con = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -10,10 +21,13 @@ const getQuery = async (query: string, params: []) => {
     database: process.env.DB_NAME,
   });
 
-  let sql = query;
+  return con;
+}
+
+const doQuery = async (con: any, sql: string, params: []) => {
   let data: any;
 
-  let doQuery = new Promise((resolve, reject) => {
+  let querying = new Promise((resolve, reject) => {
     con.query(sql, params, (error: any, results: any, fields: any) => {
       if (error) {
         console.log(error);
@@ -25,11 +39,10 @@ const getQuery = async (query: string, params: []) => {
     });
   });
 
-  await doQuery;
-  con.end();
+  await querying;
 
   return data;
-};
+}
 
 module.exports = {
   queryData: getQuery,

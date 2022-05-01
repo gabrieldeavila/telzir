@@ -10,6 +10,18 @@ const jsonParser = bodyParser.json();
 listen.post("/simulate", jsonParser, async function (req: any, res: any) {
   let { ddd_from, ddd_to, call_time, choose_plan } = req.body;
 
+  let response = await simulate(ddd_from, ddd_to, call_time, choose_plan);
+
+  // response
+  res.send(response);
+});
+
+const simulate = async (
+  ddd_from: string,
+  ddd_to: string,
+  call_time: number,
+  choose_plan: string
+) => {
   // get the minutes of the plan price and the price
   let minutes = await getMinutes(choose_plan);
   let price = await getPrice(ddd_from, ddd_to);
@@ -22,15 +34,12 @@ listen.post("/simulate", jsonParser, async function (req: any, res: any) {
   let economy = getEconomy(with_telzir, without_telzir);
 
   // create the response
-  let response = {
+  return {
     with_telzir,
     without_telzir,
     economy,
   };
-
-  // response
-  res.send(response);
-});
+};
 
 // query to get the price of the call
 const getPrice = async (ddd_from: string, ddd_to: string) => {
