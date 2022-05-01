@@ -27,6 +27,11 @@ export const CompanyText = styled.div<CompanyProps>`
   cursor: ${(props) => (props.pointer ? "pointer" : "default")};
 `;
 
+export const FooterAnchor = styled.a`
+  color: ${black};
+  text-decoration: none;
+`;
+
 export const Social = styled.div`
   ${Flex};
   gap: 1rem;

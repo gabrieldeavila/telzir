@@ -1,13 +1,9 @@
 import React from "react";
 import { withFormik } from "formik";
-import { CloneProps, FormProps, ValidateProps } from "./interface";
+import { CloneProps, FormProps } from "./interface";
 import _ from "lodash";
 import { FormWrapper, InputError, InputLabel, InputWrapper } from "./style";
 import { useTranslation } from "react-i18next";
-import schemas from "./schema";
-import { ObjectType } from "typescript";
-import { toast } from "react-toastify";
-import { t } from "i18next";
 import { getChildProps, handleErrors, handleInitialValues } from "./helpers";
 
 // prettier-ignore

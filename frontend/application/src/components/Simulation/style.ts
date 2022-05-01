@@ -1,6 +1,5 @@
 import styled from "styled-components/macro";
 import { BoxShadow, Flex } from "../../assets/base/mixins";
-import Logo from "../logo";
 
 export const SimulationWrapper = styled.div`
   ${Flex};
@@ -23,7 +22,7 @@ export const ResultItem = styled.div`
   width: 100%;
 `;
 
-export const ResultItemKey = styled.p`
+export const ResultItemKey = styled.div`
   ${Flex};
   font-weight: 500;
   font-size: 12px;
@@ -36,4 +35,9 @@ export const ResultItemKey = styled.p`
 export const ResultItemValue = styled.p`
   font-weight: 600;
   font-size: 14px;
+`;
+
+export const ResultWarning = styled.p`
+  font-size: 0.75rem;
+  text-align: center;
 `;

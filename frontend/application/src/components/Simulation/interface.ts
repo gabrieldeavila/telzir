@@ -1,5 +1,3 @@
-import { Dispatch, SetStateAction } from "react";
-
 export interface ModeProps {
   mode: "simulator" | "result";
   setMode: (mode: "simulator" | "result") => void;
@@ -26,9 +24,9 @@ export interface ResultProps {
   ddd_to: string;
   call_time: number;
   choose_plan: string;
-  with_telzir: number;
-  without_telzir: number;
-  economy: number;
+  with_telzir: number | string;
+  without_telzir: number | string;
+  economy: number | string;
 }
 
 export const result = {

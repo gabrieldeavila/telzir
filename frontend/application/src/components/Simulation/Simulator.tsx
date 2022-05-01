@@ -17,11 +17,14 @@ export default function Simulator({ setMode }: ModeProps) {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
-  const handleSubmit = useCallback((values: SubmitValues) => {
-    // @ts-ignore
-    dispatch(setSimulate(values));
-    setMode("result");
-  }, []);
+  const handleSubmit = useCallback(
+    (values: SubmitValues) => {
+      // @ts-ignore
+      dispatch(setSimulate(values));
+      setMode("result");
+    },
+    [dispatch, setMode]
+  );
 
   return (
     <>

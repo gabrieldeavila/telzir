@@ -3,6 +3,7 @@ import Logo from "../logo";
 import {
   Company,
   CompanyText,
+  FooterAnchor,
   FooterWrapper,
   Social,
   SocialIcon,
@@ -23,7 +24,12 @@ export default function Footer() {
           {t("company")}
         </CompanyText>
         <CompanyText bold pointer>
-          {t("support")}
+          <FooterAnchor
+            target="_blank"
+            href="https://api.whatsapp.com/send?phone=5554996122858"
+          >
+            {t("support")}
+          </FooterAnchor>
         </CompanyText>
       </Company>
       <Social>

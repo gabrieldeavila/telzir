@@ -18,7 +18,7 @@ export interface GetSimulateProps {
 
 // data that comes after the simulation
 export interface GetSimulateResultProps {
-  with_telzir: number;
-  without_telzir: number;
-  economy: number;
+  with_telzir: number | string;
+  without_telzir: number | string;
+  economy: number | string;
 }

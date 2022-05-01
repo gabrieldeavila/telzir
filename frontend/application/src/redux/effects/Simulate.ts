@@ -1,8 +1,4 @@
-import {
-  GetSimulateProps,
-  GetSimulateResultProps,
-  Simulate,
-} from "./../interfaces/Simulate";
+import { GetSimulateResultProps } from "./../interfaces/Simulate";
 import { Dispatch } from "react";
 import { SimulateActionTypes } from "../types/SimulateType";
 import { setSimulateAction } from "../actions/SimulateActions";
@@ -14,24 +10,24 @@ export const setSimulate = (simulateValues: SubmitValues) => {
     const SIMULATE_URL = "http://127.0.0.1:5000/simulate";
 
     // default values
-    let simulation = { with_telzir: 0, without_telzir: 0, economy: 0 };
+    let simulation: GetSimulateResultProps = {
+      with_telzir: "-",
+      without_telzir: "-",
+      economy: "-",
+    };
 
     await axios
       .post<GetSimulateResultProps>(SIMULATE_URL, simulateValues)
       .then((res) => {
-        simulation = res.data;
+        simulation = { ...simulation, ...res.data };
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch(() => {});
 
     const newSimulation = {
       ...simulateValues,
       ...simulation,
     };
 
-    setTimeout(() => {
-      dispatch(setSimulateAction(newSimulation));
-    }, 1000);
+    dispatch(setSimulateAction(newSimulation));
   };
 };

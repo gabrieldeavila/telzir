@@ -68,7 +68,14 @@ export default function Sidebar() {
           <SidebarLine />
 
           <SidebarOptions>
-            <SidebarOptionsText small>{t("support")}</SidebarOptionsText>
+            <SidebarOptionsText small>
+              <SidebarAnchor
+                target="_blank"
+                href="https://api.whatsapp.com/send?phone=5554996122858"
+              >
+                {t("support")}
+              </SidebarAnchor>
+            </SidebarOptionsText>
           </SidebarOptions>
         </SidebarScroll>
 
