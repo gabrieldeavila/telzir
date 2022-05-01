@@ -16,15 +16,20 @@ export const useFormat = () => {
         return parseFloat(value);
       case "minutes":
         return `${value.padStart(2, "0")} min`;
-      case "BRL":
+      case "BRL": {
+        if (value === "-") return value;
         return parseFloat(value).toLocaleString("pt-br", {
           style: "currency",
           currency: "BRL",
         });
-      case "percent":
+      }
+      case "percent": {
+        if (value === "-") return value;
+
         return `${parseFloat(value).toLocaleString("pt-br", {
           minimumFractionDigits: 2,
         })}%`;
+      }
       case "translate":
         return t(value);
       default:
