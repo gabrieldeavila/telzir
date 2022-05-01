@@ -10,7 +10,7 @@ import {
   SloganTextDark,
   SloganTextRed,
 } from "./style";
-import Simulation from "../../components/simulation";
+import Simulation from "../../components/Simulation";
 import Plans from "../../components/plans/index";
 
 export default function Home() {
