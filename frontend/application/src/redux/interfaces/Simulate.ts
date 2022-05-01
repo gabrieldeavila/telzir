@@ -3,9 +3,9 @@ export interface Simulate {
   ddd_to: string;
   call_time: number;
   choose_plan: string;
-  with_telzir: number;
-  without_telzir: number;
-  economy: number;
+  with_telzir: number | string;
+  without_telzir: number | string;
+  economy: number | string;
 }
 
 // data that comes before the simulation
@@ -14,4 +14,11 @@ export interface GetSimulateProps {
   ddd_to: string;
   call_time: number;
   choose_plan: string;
+}
+
+// data that comes after the simulation
+export interface GetSimulateResultProps {
+  with_telzir: number;
+  without_telzir: number;
+  economy: number;
 }

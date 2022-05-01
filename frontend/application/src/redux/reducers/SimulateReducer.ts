@@ -4,7 +4,7 @@ import {
 } from "../types/SimulateType";
 import { SET_SIMULATE } from "./../types/SimulateType";
 
-const initialStateSetCreate = {
+export const simulateInitialStateSetCreate = {
   simulate: {
     ddd_from: "",
     ddd_to: "",
@@ -17,7 +17,7 @@ const initialStateSetCreate = {
 };
 
 export const setSimulateReducer = (
-  state = initialStateSetCreate,
+  state = simulateInitialStateSetCreate,
   action: SimulateActionTypes
 ): SetSimulateStateType => {
   switch (action.type) {
