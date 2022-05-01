@@ -20,15 +20,15 @@
       "basic_advantage_1": "Trinta minutos gratuitos",
       "basic_advantage_2": "Tenha acesso a ligações de longa distância",
       "basic_advantage_3": "Suporte 24h em todo o território nacional",
-      "basic_advantage_4": "Todos os demais benefícios Telzir.",
+      "basic_advantage_4": "Todos os demais benefícios  Telzir.",
       "premium_advantage_1": "Sessenta minutos gratuitos",
       "premium_advantage_2": "Tenha acesso a ligações de longa distância",
       "premium_advantage_3": "Suporte 24h em todo o território nacional",
-      "premium_advantage_4": "Todos os demais benefícios Telzir.",
+      "premium_advantage_4": "Todos os demais benefícios  Telzir.",
       "standard_advantage_1": "Cento e vinte minutos gratuitos",
       "standard_advantage_2": "Tenha acesso a ligações de longa distância",
       "standard_advantage_3": "Suporte 24h em todo o território nacional",
-      "standard_advantage_4": "Todos os demais benefícios Telzir."
+      "standard_advantage_4": "Todos os demais benefícios  Telzir."
     }
   },
   "form": {
@@ -39,6 +39,7 @@
     "choose_plan": "Plano Escolhido"
   },
   "simulation_page": {
+    "warning": "Ops, pelo jeito a ligação do DDD de origem e destino não existe. Escolha outro DDD.",
     "basic": "FaleMais 30",
     "premium": "FaleMais 60",
     "standard": "FaleMais 120",

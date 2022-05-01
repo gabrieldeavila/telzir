@@ -39,6 +39,7 @@
     "choose_plan": "Chosen Plan"
   },
   "simulation_page": {
+    "warning": "Oops, apparently the link between the source and destination area codes does not exist. Choose another area code.",
     "basic": "TalkMore 30",
     "premium": "TalkMore 60",
     "standard": "TalkMore 120",
