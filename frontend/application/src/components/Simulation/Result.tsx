@@ -11,20 +11,28 @@ import {
 } from "./style";
 import { useFormat } from "../../hooks/useFormat";
 import { Button } from "../form/style";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { AppState } from "../../redux/store";
+import { setSimulate } from "./../../redux/effects/Simulate";
+import { simulateInitialStateSetCreate } from "../../redux/reducers/SimulateReducer";
+import _ from "lodash";
+import Loader from "./../loader/index";
 
 export default function Result({ setMode, mode }: ModeProps) {
   const { t } = useTranslation();
   const { format, formatTelzirLogo } = useFormat();
+  const dispatch = useDispatch();
 
   const simulationResult = useSelector(
+    // @ts-ignore
     (state: AppState) => state.simulate.simulate
   );
 
   const keys = Object.keys(simulationResult);
 
   const goBack = useCallback(() => {
+    // @ts-ignore
+    dispatch(setSimulate({ ...simulateInitialStateSetCreate.simulate }));
     setMode("simulator");
   }, [mode]);
 
@@ -32,20 +40,26 @@ export default function Result({ setMode, mode }: ModeProps) {
     <>
       <SectionTitle>{t("simulation_page.result")}</SectionTitle>
       <ResultWrapper>
-        {keys.map((key) => {
-          let value = simulationResult[key as keyof typeof simulationResult];
-          let type = formats[key as keyof typeof formats];
+        {_.isEmpty(simulationResult.choose_plan) ? (
+          <Loader />
+        ) : (
+          keys.map((key) => {
+            let value = simulationResult[key as keyof typeof simulationResult];
+            let type = formats[key as keyof typeof formats];
 
-          let formattedValue = format(type, value);
-          let translatedKey = t(`simulation_page.${key}`);
+            let formattedValue = format(type, value);
+            let translatedKey = t(`simulation_page.${key}`);
 
-          return (
-            <ResultItem>
-              <ResultItemKey>{formatTelzirLogo(translatedKey)}:</ResultItemKey>
-              <ResultItemValue>{formattedValue}</ResultItemValue>
-            </ResultItem>
-          );
-        })}
+            return (
+              <ResultItem>
+                <ResultItemKey>
+                  {formatTelzirLogo(translatedKey)}:
+                </ResultItemKey>
+                <ResultItemValue>{formattedValue}</ResultItemValue>
+              </ResultItem>
+            );
+          })
+        )}
       </ResultWrapper>
       <Button submit={false} onClick={goBack}>
         {t("simulation_page.back")}
